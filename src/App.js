@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/todo" element={<ToDo />} />
+        <Route path="/detail" element={<ToDo />} />
       </Routes>
     </Router>
   );
