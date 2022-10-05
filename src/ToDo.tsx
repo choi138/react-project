@@ -3,41 +3,25 @@ import { useQuery } from "react-query";
 import { getToDo, IToDo } from "./api";
 import List from "./List";
 
-interface TodoProp {
-    title: string;
-}
-
-interface TodosProp {
-    name: TodoProp[];
-}
-
 function ToDo() {
+    const { data: todo, isLoading: todoLoading } =
+        useQuery<IToDo>(["todos", "todo"], getToDo);
 
-    const [loading, setLoading] = useState(true);
-    const [todo, setTodo] = useState([]);
-    const getTodo = async () => {
-        const json = await (await fetch("/detail")).json();
-        setTodo(json.name.제목);
-        setLoading(false);
-        console.log(json.name);
-        console.log(todo);
-        return (
-            <div>{json.name}</div>
-        )
-    };
-
-    useEffect(() => {
-        getTodo();
-    }, [])
-
+    const isLoading = todoLoading || false;
     return (
         <>
             {
-                loading ? (
+                isLoading ? (
                     <div>Loading</div>
                 ) : (
                     <>
-                        <h1>hello</h1>
+                        <List
+                            todos={todo?.name || []}
+                            part="todo"
+                            id="todo"
+                            title="할 일"
+                            query="todo"
+                        />
                     </>
                 )
             }
