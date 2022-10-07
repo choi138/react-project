@@ -1,7 +1,7 @@
 export interface ToDos {
     제목: string;
     날짜: string;
-    _id: string;
+    _id: number;
 }
 export interface IToDo {
     name: ToDos[];
