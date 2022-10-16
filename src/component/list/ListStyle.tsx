@@ -33,7 +33,7 @@ export const Date = styled.p`
 export const WirteCount = styled(Date)`
     transition: all 0.3s ease-in-out;
     &:hover {
-        background-color: #757272;
+        color: #757272;
     }
 `;
 
