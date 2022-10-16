@@ -1,8 +1,9 @@
 import React from "react";
 import { IToDo, ToDos } from "../../api";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 import axios from "axios";
+
 
 interface IProps {
     todos: ToDos[];
@@ -17,6 +18,11 @@ const Input = styled.input`
 `;
 
 function List({ todos, part, id, title }: IProps) {
+    const history = useNavigate();
+    const boxClick = (id: number) => {
+        history(`/detail/${id}`);
+    }
+
     const onClick = (e: any) => {
         let writeCount = e.target.dataset.id; //
         let nowClick = e.target;
@@ -42,7 +48,7 @@ function List({ todos, part, id, title }: IProps) {
                         <h2>{todo.제목}</h2>
                         <p>{todo.날짜}</p>
                         <button data-id={todo._id} onClick={onClick}>삭제</button>
-                        <button>수정</button>
+                        <button onClick={() => boxClick(todo._id)} >수정</button>
                     </div>
                 ))}
             </div>

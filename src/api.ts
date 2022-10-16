@@ -7,7 +7,7 @@ export interface IToDo {
     name: ToDos[];
 }
 
-export interface Detail {
+export interface IDetail {
     _id: number;
     제목: string;
     날짜: string;
