@@ -10,7 +10,7 @@ function Detail(details: IProps) {
     const id = modalMatch?.params.id;
 
     return (
-        <div>
+        <div style={{ border: "1px soild gray" }}>
             <p>{details?.detail._id}</p>
             <h3>{details?.detail.제목}</h3>
             <p>{details?.detail.날짜}</p>

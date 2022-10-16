@@ -13,9 +13,6 @@ interface IProps {
     query: string;
 };
 
-const Input = styled.input`
-
-`;
 
 function List({ todos, part, id, title }: IProps) {
     const history = useNavigate();
@@ -44,19 +41,14 @@ function List({ todos, part, id, title }: IProps) {
                 <h1>{title}</h1>
                 {todos.map((todo: ToDos) => (
                     <div style={{ border: "1px solid gray" }}>
-                        <p>글번호 :{todo._id}</p>
+                        <p style={{ border: "1px solid red", width: "fit-content" }} onClick={() => boxClick(todo._id)}>글번호 :{todo._id}</p>
                         <h2>{todo.제목}</h2>
                         <p>{todo.날짜}</p>
                         <button data-id={todo._id} onClick={onClick}>삭제</button>
-                        <button onClick={() => boxClick(todo._id)} >수정</button>
+                        <button>수정</button>
                     </div>
                 ))}
             </div>
-            <form action="/add" method="POST">
-                <Input type="text" name="title" />
-                <Input type="text" name="date" />
-                <button>추가</button>
-            </form>
         </>
     )
 }

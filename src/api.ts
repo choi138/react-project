@@ -14,9 +14,9 @@ export interface IDetail {
 }
 
 export function getToDo() {
-    return fetch('/detail').then(res => res.json());
+    return fetch('/post').then(res => res.json());
 };
 
 export function getDetail(id?: string) {
-    return fetch(`/detail/${id}`).then(res => res.json());
+    return fetch(`/postdetail/${id}`).then(res => res.json());
 }
