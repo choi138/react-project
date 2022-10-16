@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Write from "./component/write/Write";
 import Header from "./header/Header";
 import Details from "./route/Details";
+import Home from "./route/home/Home";
 import ToDo from './route/List';
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Write />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/write" element={<Write />} />
         <Route path="list" element={<ToDo />} />
         <Route path="/detail/:id" element={<Details />} />
       </Routes>
