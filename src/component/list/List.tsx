@@ -1,5 +1,5 @@
 import React from "react";
-import { IToDo, ToDos } from "./api";
+import { IToDo, ToDos } from "../../api";
 import { Link } from 'react-router-dom';
 import styled from "styled-components";
 import axios from "axios";
@@ -36,15 +36,15 @@ function List({ todos, part, id, title }: IProps) {
         <>
             <div>
                 <h1>{title}</h1>
-                <ul>
-                    {todos.map((todo: ToDos) => (
-                        <li>
-                            <h2>{todo._id}: {todo.제목}</h2>
-                            <p>{todo.날짜}</p>
-                            <button data-id={todo._id} onClick={onClick}>삭제</button>
-                        </li>
-                    ))}
-                </ul>
+                {todos.map((todo: ToDos) => (
+                    <div style={{ border: "1px solid gray" }}>
+                        <p>글번호 :{todo._id}</p>
+                        <h2>{todo.제목}</h2>
+                        <p>{todo.날짜}</p>
+                        <button data-id={todo._id} onClick={onClick}>삭제</button>
+                        <button>수정</button>
+                    </div>
+                ))}
             </div>
             <form action="/add" method="POST">
                 <Input type="text" name="title" />
