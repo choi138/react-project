@@ -6,14 +6,15 @@ export const Wrap = styled.div`
     background-color: #F8F9Fa;
     padding: 10px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    flex-direction: column;
+    /* flex-direction: column; */
 `;
 
 export const NavWrap = styled.div`
     width: 99%;
     display: flex;
+    /* justify-content: space-between; */
     align-items: center;
 `;
 
@@ -25,7 +26,8 @@ export const Title = styled.div`
 
 export const Navbar = styled.div`
     margin-left: 30px;
-    width: 10%;
+    padding: 10px;
+    width: 20%;
     display: flex;
     justify-content: space-between;
     align-items: center;

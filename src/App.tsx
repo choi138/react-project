@@ -6,6 +6,7 @@ import Details from "./route/Details";
 import Edits from "./route/Edits";
 import Home from "./route/Home";
 import ToDo from './route/List';
+import List from "./route/Login/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/write" element={<Write />} />
         <Route path="/list" element={<ToDo />} />
+        <Route path="/login" element={<List />} />
         <Route path="/detail/:id" element={<Details />} />
         <Route path="/edit/:id" element={<Edits />} />
       </Routes>

@@ -11,6 +11,8 @@ export interface IDetail {
     _id: number;
     제목: string;
     날짜: string;
+    id: string;
+    password: string;
 }
 
 export function getToDo() {

@@ -9,9 +9,9 @@ function Header() {
                     <S.Nav to="/">Home</S.Nav>
                     <S.NavHome to="/write">Write</S.NavHome>
                     <S.NavHome to="/list">List</S.NavHome>
+                    <S.NavHome to="/login">Login</S.NavHome>
                 </S.Navbar>
             </S.NavWrap>
-
         </S.Wrap>
     );
 }

@@ -14,6 +14,8 @@ function Detail(details: IProps) {
             <p>{details?.detail._id}</p>
             <h3>{details?.detail.제목}</h3>
             <p>{details?.detail.날짜}</p>
+            <p>{details?.detail.id}</p>
+            <p>{details?.detail.password}</p>
         </div>
     )
 }
